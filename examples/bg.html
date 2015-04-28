@@ -1,0 +1,42 @@
+<!doctype html><html>
+<head>
+<style type="text/css">
+.particle_canvas {
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+.container {
+  text-align: center;
+}
+</style>
+</head>
+<body>
+<div class="particle_canvas" id="particle_canvas"></div>
+<div class="container">
+  <h1>particle.js</h1>
+  <h3>
+    <a href="https://github.com/scotchfield/particle.js">
+      https://github.com/scotchfield/particle.js
+    </a>
+  </h3>
+</div>
+<script src="../src/particle.js" type="text/javascript"></script>
+<script type="text/javascript">
+var options = {width: window.innerWidth, height: window.innerHeight,
+               backgroundColor: '#ffffff'},
+randomStyle = function () {
+    return 'rgb(' +
+           Math.floor(Math.random() * 255) + ',' +
+           Math.floor(Math.random() * 255) + ',' +
+           Math.floor(Math.random() * 255) + ')';
+},
+g_options = {x: options.width / 2, y: 150, style: randomStyle};
+
+particle.create('particle_canvas', options)
+    .addGenerator(g_options);
+</script>
+</body></html>
